@@ -1,12 +1,12 @@
-import Link from 'next/link';
+import Link from 'next/link'
 
-import Logo from './logo';
-import classes from './main-navigation.module.css';
+import Logo from './logo'
+import classes from './main-navigation.module.css'
 
 function MainNavigation() {
   return (
     <header className={classes.header}>
-      <Link href='/'>
+      <Link href="/" legacyBehavior>
         <a>
           <Logo />
         </a>
@@ -14,15 +14,15 @@ function MainNavigation() {
       <nav>
         <ul>
           <li>
-            <Link href='/posts'>Posts</Link>
+            <Link href="/posts">Posts</Link>
           </li>
           <li>
-            <Link href='/contact'>Contact</Link>
+            <Link href="/contact">Contact</Link>
           </li>
         </ul>
       </nav>
     </header>
-  );
+  )
 }
 
-export default MainNavigation;
+export default MainNavigation

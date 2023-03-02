@@ -1,23 +1,23 @@
-import Link from 'next/link';
-import Image from 'next/image';
+import Link from 'next/link'
+import Image from 'next/image'
 
-import classes from './post-item.module.css';
+import classes from './post-item.module.css'
 
 function PostItem(props) {
-  const { title, image, excerpt, date, slug } = props.post;
+  const { title, image, excerpt, date, slug } = props.post
 
   const formattedDate = new Date(date).toLocaleDateString('en-US', {
     day: 'numeric',
     month: 'long',
     year: 'numeric',
-  });
+  })
 
-  const imagePath = `/images/posts/${slug}/${image}`;
-  const linkPath = `/posts/${slug}`;
+  const imagePath = `/images/posts/${slug}/${image}`
+  const linkPath = `/posts/${slug}`
 
   return (
     <li className={classes.post}>
-      <Link href={linkPath}>
+      <Link href={linkPath} legacyBehavior>
         <a>
           <div className={classes.image}>
             <Image
@@ -25,7 +25,7 @@ function PostItem(props) {
               alt={title}
               width={300}
               height={200}
-              layout='responsive'
+              layout="responsive"
             />
           </div>
           <div className={classes.content}>
@@ -36,7 +36,7 @@ function PostItem(props) {
         </a>
       </Link>
     </li>
-  );
+  )
 }
 
-export default PostItem;
+export default PostItem
